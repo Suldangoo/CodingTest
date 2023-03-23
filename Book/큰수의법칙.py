@@ -12,7 +12,7 @@ two = data[-2] # 두 번째로 큰 숫자 인덱싱
 total = 0 # 합계
 flag = 0 # 연속 k번을 감지하기 위한 플래그 변수
 
-for i in range(m) : # m번만큼 반복
+for _ in range(m) : # m번만큼 반복
     if flag >= k : # 플래그가 k와 같다면
         total += two # 2번째로 큰 수를 더함
         flag = 0 # 플래그 정상화
