@@ -1,5 +1,5 @@
-# 1966. ÇÑ¼ö (½Ç¹ö 3)
-# ¾Ë°í¸®Áò ºÐ·ù : ÀÚ·á±¸Á¶, Å¥, ±¸Çö, ½Ã¹Ä·¹ÀÌ¼Ç
+# 1966. í•œìˆ˜ (ì‹¤ë²„ 3)
+# ì•Œê³ ë¦¬ì¦˜ ë¶„ë¥˜ : ìžë£Œêµ¬ì¡°, í, êµ¬í˜„, ì‹œë®¬ë ˆì´ì…˜
 
 import sys
 from collections import deque
@@ -10,24 +10,24 @@ for _ in range(test) :
     n, m = map(int, sys.stdin.readline().split())
     importance = list(map(int, sys.stdin.readline().split()))
 
-    queue = deque(importance) # Áß¿äµµ¸¦ ±×´ë·Î »ì·Á Å¥ »ý¼º
-    importance.sort() # Áß¿äµµ¸¦ ¿À¸§Â÷¼øÀ¸·Î Á¤·Ä
+    queue = deque(importance) # ì¤‘ìš”ë„ë¥¼ ê·¸ëŒ€ë¡œ ì‚´ë ¤ í ìƒì„±
+    importance.sort() # ì¤‘ìš”ë„ë¥¼ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬
 
-    i = 1 # Áö±Ý Ãâ·ÂÇÑ Á¾ÀÌ°¡ ¸î ¹øÂ°·Î Ãâ·ÂÇÑ Á¾ÀÌÀÎÁö Ã¼Å©ÇÒ º¯¼ö
-    # ¸®½ºÆ®ÀÇ ±æÀÌ°¡ 0ÀÌ µÉ ¶§±îÁö ¹Ýº¹
+    i = 1 # ì§€ê¸ˆ ì¶œë ¥í•œ ì¢…ì´ê°€ ëª‡ ë²ˆì§¸ë¡œ ì¶œë ¥í•œ ì¢…ì´ì¸ì§€ ì²´í¬í•  ë³€ìˆ˜
+    # ë¦¬ìŠ¤íŠ¸ì˜ ê¸¸ì´ê°€ 0ì´ ë  ë•Œê¹Œì§€ ë°˜ë³µ
     while(len(importance) > 0) :
-        if queue[0] == importance[-1] : # ¸¸¾à Áö±Ý Á¦ÀÏ ¾Õ¿¡ ÀÖ´Â Á¾ÀÌ°¡ °¡Àå Áß¿äµµ°¡ ³ôÀ» °æ¿ì
-            del importance[-1] # °¡Àå ³ôÀº Áß¿äµµ ¸®½ºÆ® ÇÏ³ª Á¦°Å
-            queue.popleft() # Á¾ÀÌ Ãâ·Â
-            if m == 0 : # ¸¸¾à ÀÌ¹ø Á¾ÀÌ°¡ ÃßÀûÁßÀÎ Á¾ÀÌ¾ú´Ù¸é
-                print(i) # i Ãâ·Â ÈÄ break
+        if queue[0] == importance[-1] : # ë§Œì•½ ì§€ê¸ˆ ì œì¼ ì•žì— ìžˆëŠ” ì¢…ì´ê°€ ê°€ìž¥ ì¤‘ìš”ë„ê°€ ë†’ì„ ê²½ìš°
+            del importance[-1] # ê°€ìž¥ ë†’ì€ ì¤‘ìš”ë„ ë¦¬ìŠ¤íŠ¸ í•˜ë‚˜ ì œê±°
+            queue.popleft() # ì¢…ì´ ì¶œë ¥
+            if m == 0 : # ë§Œì•½ ì´ë²ˆ ì¢…ì´ê°€ ì¶”ì ì¤‘ì¸ ì¢…ì´ì—ˆë‹¤ë©´
+                print(i) # i ì¶œë ¥ í›„ break
                 break
-            else : # ÃßÀûÁßÀÎ Á¾ÀÌ°¡ ¾Æ´Ï¶ó¸é
-                i += 1 # Ãâ·ÂÇÑ Á¾ÀÌ °¹¼ö Áõ°¡
-                m -= 1 # ÇöÀç ÃßÀûÁßÀÎ Á¾ÀÌ ¼ø¼­ °»½Å
+            else : # ì¶”ì ì¤‘ì¸ ì¢…ì´ê°€ ì•„ë‹ˆë¼ë©´
+                i += 1 # ì¶œë ¥í•œ ì¢…ì´ ê°¯ìˆ˜ ì¦ê°€
+                m -= 1 # í˜„ìž¬ ì¶”ì ì¤‘ì¸ ì¢…ì´ ìˆœì„œ ê°±ì‹ 
         else :
-            queue.append(queue.popleft()) # Áß¿äµµ°¡ ´õ ³ôÀº°Ô ÀÖ´Ù¸é °¡Àå µÚ·Î »©¹ö¸®±â
-            if (m == 0) : # ±× Á¾ÀÌ°¡ ÃßÀûÁßÀÎ Á¾ÀÌ¾ú´Ù¸é
-                m = len(importance) - 1 # °¡Àå µÚ·Î º¸³»¹ö¸®±â
+            queue.append(queue.popleft()) # ì¤‘ìš”ë„ê°€ ë” ë†’ì€ê²Œ ìžˆë‹¤ë©´ ê°€ìž¥ ë’¤ë¡œ ë¹¼ë²„ë¦¬ê¸°
+            if (m == 0) : # ê·¸ ì¢…ì´ê°€ ì¶”ì ì¤‘ì¸ ì¢…ì´ì—ˆë‹¤ë©´
+                m = len(importance) - 1 # ê°€ìž¥ ë’¤ë¡œ ë³´ë‚´ë²„ë¦¬ê¸°
             else :
-                m -= 1 # ¾Æ´Ï¶ó¸é ÃßÀûÁßÀÎ Á¾ÀÌ ¼ø¼­ °»½Å
+                m -= 1 # ì•„ë‹ˆë¼ë©´ ì¶”ì ì¤‘ì¸ ì¢…ì´ ìˆœì„œ ê°±ì‹ 
