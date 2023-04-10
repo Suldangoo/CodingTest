@@ -1,5 +1,5 @@
-# 10211. Maximum Subarray (½Ç¹ö 4)
-# ¾Ë°í¸®Áò ºÐ·ù : Ä«µ¥ÀÎ ¾Ë°í¸®Áò, ºê·çÆ®Æ÷½º, ´©Àû ÇÕ
+# 10211. Maximum Subarray (ì‹¤ë²„ 4)
+# ì•Œê³ ë¦¬ì¦˜ ë¶„ë¥˜ : ì¹´ë°ì¸ ì•Œê³ ë¦¬ì¦˜, ë¸Œë£¨íŠ¸í¬ìŠ¤, ëˆ„ì  í•©
 
 import sys
 
@@ -9,16 +9,16 @@ for _ in range(t):
     n = int(sys.stdin.readline())
     x = list(map(int, sys.stdin.readline().split()))
 
-    best = x[0]   # ¹è¿­ÀÇ Ã¹ ¹øÂ° ¿ø¼Ò¸¦ ÃÊ±â°ªÀ¸·Î ¼³Á¤
-    total = 0     # ´©ÀûµÈ ºÎºÐ ¹è¿­ÀÇ ÇÕÀ» ÀúÀåÇÏ´Â º¯¼ö
+    best = x[0]   # ë°°ì—´ì˜ ì²« ë²ˆì§¸ ì›ì†Œë¥¼ ì´ˆê¸°ê°’ìœ¼ë¡œ ì„¤ì •
+    total = 0     # ëˆ„ì ëœ ë¶€ë¶„ ë°°ì—´ì˜ í•©ì„ ì €ìž¥í•˜ëŠ” ë³€ìˆ˜
 
-    # 2Áß for¹®À» µ¹¸ç ¸ðµç °æ¿ì¸¦ ºê·çÆ®Æ÷½º·Î È®ÀÎÇÒ ¼ö ÀÖÀ¸³ª, ±×·² °æ¿ì ½Ã°£ º¹Àâµµ´Â O(n^3)±îÁö ¿Ã¶ó°¥ ¼ö ÀÖÀ½
-    # ¾Æ·¡ÀÇ Kadane ¾Ë°í¸®ÁòÀ¸·Î ½Ã°£ º¹Àâµµ¸¦ O(n) ±îÁö ÁÙÀÏ ¼ö ÀÖÀ½
+    # 2ì¤‘ forë¬¸ì„ ëŒë©° ëª¨ë“  ê²½ìš°ë¥¼ ë¸Œë£¨íŠ¸í¬ìŠ¤ë¡œ í™•ì¸í•  ìˆ˜ ìžˆìœ¼ë‚˜, ê·¸ëŸ´ ê²½ìš° ì‹œê°„ ë³µìž¡ë„ëŠ” O(n^3)ê¹Œì§€ ì˜¬ë¼ê°ˆ ìˆ˜ ìžˆìŒ
+    # ì•„ëž˜ì˜ Kadane ì•Œê³ ë¦¬ì¦˜ìœ¼ë¡œ ì‹œê°„ ë³µìž¡ë„ë¥¼ O(n) ê¹Œì§€ ì¤„ì¼ ìˆ˜ ìžˆìŒ
     for i in range(n):
-        # ÇöÀç ¿ø¼Ò¿Í ÀÌÀü±îÁö ´©ÀûµÈ ÇÕ total°úÀÇ ÇÕ Áß ´õ Å« °ªÀ» ¼±ÅÃÇÏ¿© total¿¡ ÀúÀå
+        # í˜„ìž¬ ì›ì†Œì™€ ì´ì „ê¹Œì§€ ëˆ„ì ëœ í•© totalê³¼ì˜ í•© ì¤‘ ë” í° ê°’ì„ ì„ íƒí•˜ì—¬ totalì— ì €ìž¥
         total = max(x[i], total + x[i])
 
-        # ÇöÀç±îÁö Ã£Àº ºÎºÐ ¹è¿­ Áß °¡Àå Å« ÇÕÀ» ÀúÀåÇÏ´Â º¯¼ö best¿Í ºñ±³ÇÏ¿©, ´õ Å« °ªÀ» best¿¡ ÀúÀå
+        # í˜„ìž¬ê¹Œì§€ ì°¾ì€ ë¶€ë¶„ ë°°ì—´ ì¤‘ ê°€ìž¥ í° í•©ì„ ì €ìž¥í•˜ëŠ” ë³€ìˆ˜ bestì™€ ë¹„êµí•˜ì—¬, ë” í° ê°’ì„ bestì— ì €ìž¥
         best = max(best, total)
 
     print(best)

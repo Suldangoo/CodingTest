@@ -1,5 +1,5 @@
-# 10211. Maximum Subarray (½Ç¹ö 4)
-# ¾Ë°í¸®Áò ºĞ·ù : ºê·çÆ®Æ÷½º, ´©Àû ÇÕ
+# 10211. Maximum Subarray (ì‹¤ë²„ 4)
+# ì•Œê³ ë¦¬ì¦˜ ë¶„ë¥˜ : ë¸Œë£¨íŠ¸í¬ìŠ¤, ëˆ„ì  í•©
 
 import sys
 t = int(sys.stdin.readline())
@@ -9,8 +9,8 @@ for _ in range(t) :
     x = list(map(int, sys.stdin.readline().split()))
 
     total = sum(x)
-    # iÀÇ ¹üÀ§´Â 0 ~ n - 2
-    # jÀÇ ¹üÀ§´Â 1 ~ n
+    # iì˜ ë²”ìœ„ëŠ” 0 ~ n - 2
+    # jì˜ ë²”ìœ„ëŠ” 1 ~ n
     for i in range(n - 2) :
         for j in range(i, n) :
             total = max(total, sum(x[i:j]))
