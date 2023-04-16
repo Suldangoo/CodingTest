@@ -1,51 +1,32 @@
 # 16505. 별 (실버 3)
 # 알고리즘 분류 : 구현, 재귀
 
-# 0 일땐 (0,0)
-# 1 일땐 (1,0) (0,0) (0,1)
-# 2 일땐 (0,3) (0,1) (2,1)
+def star (x, y, point) :
+    # 현재 포인트에 별을 찍는다
+    starList[x][y] = '*'
 
-import math
-
-def star (x, y, starList, n) :
-    
-    
-    starList[x][y] = 1
-
-    if n == 0 :
+    # point가 0에 다다랐다면 재귀함수를 return한다
+    if point == 0 :
         return
+    
+    # point를 절반 줄인다
+    next_point = int(point / 2)
 
-    star(math.trunc(x / 2), y, starList, n - 1)
-    star(math.trunc(x / 2), 2 ** n // 2, starList, n - 1)
+    star(x + next_point, y, next_point) # 프랙탈의 밑 프랙탈을 처리하는 재귀
+    star(x, y + next_point, next_point) # 프랙탈의 오른쪽 프랙탈을 처리하는 재귀
+    star(x, y, next_point) # 현재 기준점의 프랙탈을 처리하는 재귀
 
 n = int(input())
 
 # 한 변의 길이가 2^n 인 0으로 가득 찬 2차원 리스트를 생성한다
-starList = [[0] * (2 ** n) for _ in range(2 ** n)]
+starList = [[' '] * (2 ** n) for _ in range(2 ** n)]
 
-
-
-# 프랙탈의 가장 왼쪽 아래 꼭짓점 포인트를 잡는다
-x = 2 ** n - 1
-y = 0
-
-star(x, y, starList, n)
-
-
-# # 프랙탈의 왼쪽 위와 오른쪽 위의 꼭짓점 포인트를 잡는다
-# x = math.trunc(x / 2)
-# starList[x][y] = 1
-
-# y = 2 ** n // 2
-# starList[x][y] = 1
-
-# 함수를 작성한다
-
-
-
-
-
-
+point = 2 ** n # 2의 n제곱으로 된 사이즈를 결정짓는다
+star(0, 0, point) # 프랙탈의 가장 왼쪽 위를 기준점으로 잡고 재귀한다
 
 for i in starList :
-    print(i)
+    # 공백을 제거하기 위해 문자열에 추가 후 rstrip()
+    result = ""
+    for j in i :
+        result += j
+    print(result.rstrip())
