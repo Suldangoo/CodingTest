@@ -15,5 +15,4 @@ for i in reversed(p) :
     result.insert(i, n)
     n -= 1
 
-for i in result :
-    print(i, end = ' ')
+print(*result) # result 리스트 전체 출력
