@@ -17,5 +17,6 @@ while True :
             # 라인 + 라인의 길이만큼의 공백 + 라인
             line = line + ' ' * len(line) + line
         print(line)
+
     except : # EOF 혹은 에러 발생 시 반복문 종료
         break
