@@ -4,7 +4,24 @@
 n, k = map(int, input().split())
 
 max_three = n // 3
+numlists = []
 
 for i in range(max_three + 1) :
+    numlist = []
     num = n - i * 3
-    
+    max_two = num // 2
+    for j in range(max_two + 1) :
+        num = n - i * 3
+
+        for _ in range(i) :
+            numlist.append(3)
+        for _ in range(j) :
+            numlist.append(2)
+        
+        while True :
+            if num <= 0 :
+                break
+            else :
+                num -= 1
+                numlist.append(1)
+    print(numlist)
