@@ -1,5 +1,5 @@
-# 1485. Á¤»ç°¢Çü (½Ç¹ö 3)
-# ¾Ë°í¸®Áò ºĞ·ù : ±âÇÏÇĞ, Á¤·Ä
+# 1485. ì •ì‚¬ê°í˜• (ì‹¤ë²„ 3)
+# ì•Œê³ ë¦¬ì¦˜ ë¶„ë¥˜ : ê¸°í•˜í•™, ì •ë ¬
 
 import math
 
@@ -11,7 +11,7 @@ for _ in range(T):
         x, y = map(int, input().split())
         points.append((x, y))
     
-    # °¢ Á¡ »çÀÌÀÇ °Å¸®¸¦ °è»êÇÏ¿© Á¤·Ä
+    # ê° ì  ì‚¬ì´ì˜ ê±°ë¦¬ë¥¼ ê³„ì‚°í•˜ì—¬ ì •ë ¬
     distances = []
     for i in range(3):
         for j in range(i+1, 4):
@@ -19,7 +19,7 @@ for _ in range(T):
             distances.append(d)
     distances.sort()
     
-    # °Å¸®°¡ ¸ğµÎ °°À¸¸é Á¤»ç°¢Çü
+    # ê±°ë¦¬ê°€ ëª¨ë‘ ê°™ìœ¼ë©´ ì •ì‚¬ê°í˜•
     if distances[0] == distances[1] == distances[2] == distances[3]:
         print("1")
     else:
