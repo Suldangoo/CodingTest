@@ -1,32 +1,32 @@
-# 1655. °¡¿îµ¥¸¦ ¸»ÇØ¿ä (°ñµå2)
-# ¾Ë°í¸®Áò ºÐ·ù : ¿ì¼±¼øÀ§ Å¥, Èü, ÀÚ·á±¸Á¶
+# 1655. ê°€ìš´ë°ë¥¼ ë§í•´ìš” (ê³¨ë“œ2)
+# ì•Œê³ ë¦¬ì¦˜ ë¶„ë¥˜ : ìš°ì„ ìˆœìœ„ í, íž™, ìžë£Œêµ¬ì¡°
 
-import heapq # ÈüÅ¥ ¸ðµâ »ç¿ë
+import heapq # íž™í ëª¨ë“ˆ ì‚¬ìš©
 import sys
 
-# ÀÔ·Â¹Þ±â
+# ìž…ë ¥ë°›ê¸°
 n = int(sys.stdin.readline().strip())
 nums = []
 
-# Áß¾Ó°ª ±âÁØÀ¸·Î ÀÛÀº °ªµéÀ» max_heap¿¡, Å« °ªµéÀº min_heap¿¡ ÀúÀå
-max_heap = [] # ÃÖ´ë Èü
-min_heap = [] # ÃÖ¼Ò Èü
+# ì¤‘ì•™ê°’ ê¸°ì¤€ìœ¼ë¡œ ìž‘ì€ ê°’ë“¤ì„ max_heapì—, í° ê°’ë“¤ì€ min_heapì— ì €ìž¥
+max_heap = [] # ìµœëŒ€ íž™
+min_heap = [] # ìµœì†Œ íž™
 
 for _ in range(n):
     num = int(sys.stdin.readline().strip())
-    # Â¦¼ö ¹øÂ° ¼öÀÎ °æ¿ì
+    # ì§ìˆ˜ ë²ˆì§¸ ìˆ˜ì¸ ê²½ìš°
     if len(max_heap) == len(min_heap):
-        heapq.heappush(max_heap, (-num, num)) # ÃÖ´ë Èü¿¡ ÀúÀå
-    # È¦¼ö ¹øÂ° ¼öÀÎ °æ¿ì
+        heapq.heappush(max_heap, (-num, num)) # ìµœëŒ€ íž™ì— ì €ìž¥
+    # í™€ìˆ˜ ë²ˆì§¸ ìˆ˜ì¸ ê²½ìš°
     else:
-        heapq.heappush(min_heap, (num, num)) # ÃÖ¼Ò Èü¿¡ ÀúÀå
+        heapq.heappush(min_heap, (num, num)) # ìµœì†Œ íž™ì— ì €ìž¥
 
-    # ÃÖ´ë ÈüÀÇ ÃÖ´ñ°ªÀÌ ÃÖ¼Ò ÈüÀÇ ÃÖ¼Ú°ªº¸´Ù Å¬ °æ¿ì µÎ °ªÀ» ±³È¯
+    # ìµœëŒ€ íž™ì˜ ìµœëŒ“ê°’ì´ ìµœì†Œ íž™ì˜ ìµœì†Ÿê°’ë³´ë‹¤ í´ ê²½ìš° ë‘ ê°’ì„ êµí™˜
     if min_heap and max_heap[0][1] > min_heap[0][1]:
         max_value = heapq.heappop(max_heap)[1]
         min_value = heapq.heappop(min_heap)[1]
         heapq.heappush(max_heap, (-min_value, min_value))
         heapq.heappush(min_heap, (max_value, max_value))
     
-    # Áß¾Ó°ª Ãâ·Â
+    # ì¤‘ì•™ê°’ ì¶œë ¥
     print(max_heap[0][1])
