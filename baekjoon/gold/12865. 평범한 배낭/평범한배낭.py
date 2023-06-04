@@ -1,15 +1,15 @@
-# 12865. Æò¹üÇÑ ¹è³¶ (°ñµå5)
-# ¾Ë°í¸®Áò ºÐ·ù : ´ÙÀÌ³ª¹Í ÇÁ·Î±×·¡¹Ö, Knapsack problem
+# 12865. í‰ë²”í•œ ë°°ë‚­ (ê³¨ë“œ5)
+# ì•Œê³ ë¦¬ì¦˜ ë¶„ë¥˜ : ë‹¤ì´ë‚˜ë¯¹ í”„ë¡œê·¸ëž˜ë°, Knapsack problem
 
-n, k = map(int, input().split()) # ¹°Ç°ÀÇ ¼ö n°ú ¹öÆ¿ ¼ö ÀÖ´Â ¹«°Ô k ÀÔ·Â¹Þ±â
-dp = [0] * (k+1) # dp Å×ÀÌºí ÃÊ±âÈ­
+n, k = map(int, input().split()) # ë¬¼í’ˆì˜ ìˆ˜ nê³¼ ë²„í‹¸ ìˆ˜ ìžˆëŠ” ë¬´ê²Œ k ìž…ë ¥ë°›ê¸°
+dp = [0] * (k+1) # dp í…Œì´ë¸” ì´ˆê¸°í™”
 
 for i in range(n):
-    w, v = map(int, input().split()) # °¢ ¹°°ÇÀÇ ¹«°Ô w¿Í °¡Ä¡ v ÀÔ·Â¹Þ±â
+    w, v = map(int, input().split()) # ê° ë¬¼ê±´ì˜ ë¬´ê²Œ wì™€ ê°€ì¹˜ v ìž…ë ¥ë°›ê¸°
     for j in range(k, w-1, -1):
-        # ÇöÀç ¹°°ÇÀÇ ¹«°ÔºÎÅÍ ½ÃÀÛÇØ¼­ ¿ª¼øÀ¸·Î Å½»öÇÏ¸ç dp Å×ÀÌºí °»½Å
-        # j´Â ÇöÀç ¹è³¶¿¡ ³ÖÀ» ¼ö ÀÖ´Â ¹«°Ô¸¦ ÀÇ¹Ì
-        # wº¸´Ù ÀÛÀº ¹«°Ô´Â ¹è³¶¿¡ ³ÖÀ» ¼ö ¾øÀ¸¹Ç·Î ¹«½ÃÇÑ´Ù
+        # í˜„ìž¬ ë¬¼ê±´ì˜ ë¬´ê²Œë¶€í„° ì‹œìž‘í•´ì„œ ì—­ìˆœìœ¼ë¡œ íƒìƒ‰í•˜ë©° dp í…Œì´ë¸” ê°±ì‹ 
+        # jëŠ” í˜„ìž¬ ë°°ë‚­ì— ë„£ì„ ìˆ˜ ìžˆëŠ” ë¬´ê²Œë¥¼ ì˜ë¯¸
+        # wë³´ë‹¤ ìž‘ì€ ë¬´ê²ŒëŠ” ë°°ë‚­ì— ë„£ì„ ìˆ˜ ì—†ìœ¼ë¯€ë¡œ ë¬´ì‹œí•œë‹¤
         dp[j] = max(dp[j], dp[j-w]+v)
 
-print(dp[k]) # ¹è³¶¿¡ ³ÖÀ» ¼ö ÀÖ´Â ¹°°ÇµéÀÇ °¡Ä¡ÇÕÀÇ ÃÖ´ñ°ª Ãâ·Â
+print(dp[k]) # ë°°ë‚­ì— ë„£ì„ ìˆ˜ ìžˆëŠ” ë¬¼ê±´ë“¤ì˜ ê°€ì¹˜í•©ì˜ ìµœëŒ“ê°’ ì¶œë ¥
