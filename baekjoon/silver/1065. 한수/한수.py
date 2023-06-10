@@ -1,19 +1,19 @@
-# 1065. ÇÑ¼ö (½Ç¹ö 4)
-# ¾Ë°í¸®Áò ºÐ·ù : ºê·çÆ®Æ÷½º
+# 1065. í•œìˆ˜ (ì‹¤ë²„ 4)
+# ì•Œê³ ë¦¬ì¦˜ ë¶„ë¥˜ : ë¸Œë£¨íŠ¸í¬ìŠ¤
 
 n = int(input())
 
-if n < 100 : # nÀÌ 100º¸´Ù ÀÛ´Ù¸é ¹Ýµå½Ã ÇØ´ç ¼ýÀÚ°¡ ÇÑ¼öÀÇ °³¼ö
+if n < 100 : # nì´ 100ë³´ë‹¤ ìž‘ë‹¤ë©´ ë°˜ë“œì‹œ í•´ë‹¹ ìˆ«ìžê°€ í•œìˆ˜ì˜ ê°œìˆ˜
     print(n)
-elif n == 1000 : # nÀÌ 1000ÀÌ¶ó¸é ¹Ýµå½Ã ÇÑ¼öÀÇ °³¼ö´Â 144 °íÁ¤
+elif n == 1000 : # nì´ 1000ì´ë¼ë©´ ë°˜ë“œì‹œ í•œìˆ˜ì˜ ê°œìˆ˜ëŠ” 144 ê³ ì •
     print(144)
-else : # »çÀü °ø°ÝÀÌ ³¡³µÀ¸¹Ç·Î 111º¸´Ù Å« 3ÀÚ¸® Á¤¼öÀÇ ºê·çÆ®Æ÷½º ¾Ë°í¸®Áò ÀÛµ¿
-    ans = 99 # ¿ì¼± 99°³ÀÓÀ» ±âº»À¸·Î ÁöÁ¤
-    for i in range(111, n + 1) : # 111ºÎÅÍ »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ Á¤¼ö±îÁö ¹Ýº¹
+else : # ì‚¬ì „ ê³µê²©ì´ ëë‚¬ìœ¼ë¯€ë¡œ 111ë³´ë‹¤ í° 3ìžë¦¬ ì •ìˆ˜ì˜ ë¸Œë£¨íŠ¸í¬ìŠ¤ ì•Œê³ ë¦¬ì¦˜ ìž‘ë™
+    ans = 99 # ìš°ì„  99ê°œìž„ì„ ê¸°ë³¸ìœ¼ë¡œ ì§€ì •
+    for i in range(111, n + 1) : # 111ë¶€í„° ì‚¬ìš©ìžê°€ ìž…ë ¥í•œ ì •ìˆ˜ê¹Œì§€ ë°˜ë³µ
         num = []
-        for j in map(int, str(i)) : # ÇØ´ç ¼ýÀÚ¸¦ splitÀ¸·Î °¥¶ó ¸®½ºÆ®¿¡ Ãß°¡
+        for j in map(int, str(i)) : # í•´ë‹¹ ìˆ«ìžë¥¼ splitìœ¼ë¡œ ê°ˆë¼ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
             num.append(j)
 
-        if num[0] - num[1] == num[1] - num[2] : # 1¹ø ~ 3¹øÀÇ ÀÚ¸®°¡ µîÂ÷¼ö¿­ÀÌ¸é, ÇÑ¼ö
+        if num[0] - num[1] == num[1] - num[2] : # 1ë²ˆ ~ 3ë²ˆì˜ ìžë¦¬ê°€ ë“±ì°¨ìˆ˜ì—´ì´ë©´, í•œìˆ˜
             ans += 1
     print(ans)
