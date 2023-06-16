@@ -1,14 +1,14 @@
-# 2562. ÃÖ´ñ°ª (ºê·ÐÁî3)
-# ¾Ë°í¸®Áò ºÐ·ù : ±¸Çö
+# 2562. ìµœëŒ“ê°’ (ë¸Œë¡ ì¦ˆ3)
+# ì•Œê³ ë¦¬ì¦˜ ë¶„ë¥˜ : êµ¬í˜„
 
 n = int(input())
-top = n # Ã¹ ¹øÂ° °ªÀº ±×³É ÀÔ·Â¹ÞÀº ÈÄ top º¯¼ö¿¡ ÀúÀå
-num = 1 # Ã¹ ¹øÂ° °ªÀÌ °¡Àå Å« ¹øÈ£¶ó°í °¡Á¤
+top = n # ì²« ë²ˆì§¸ ê°’ì€ ê·¸ëƒ¥ ìž…ë ¥ë°›ì€ í›„ top ë³€ìˆ˜ì— ì €ìž¥
+num = 1 # ì²« ë²ˆì§¸ ê°’ì´ ê°€ìž¥ í° ë²ˆí˜¸ë¼ê³  ê°€ì •
 
-for i in range(8) : # ÀÌÈÄ 8¹ø ´õ ÀÔ·Â¹ÞÀ½
+for i in range(8) : # ì´í›„ 8ë²ˆ ë” ìž…ë ¥ë°›ìŒ
     n = int(input())
-    if top < n : # ¸¸¾à nÀÌ topº¸´Ù ´õ Å©´Ù¸é, »õ·Î¿î ÃÖ´ñ°ª µîÀå
-        # º¯¼ö °»½Å
+    if top < n : # ë§Œì•½ nì´ topë³´ë‹¤ ë” í¬ë‹¤ë©´, ìƒˆë¡œìš´ ìµœëŒ“ê°’ ë“±ìž¥
+        # ë³€ìˆ˜ ê°±ì‹ 
         top = n
         num = i + 2
 
