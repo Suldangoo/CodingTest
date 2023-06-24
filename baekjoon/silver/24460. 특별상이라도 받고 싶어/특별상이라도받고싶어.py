@@ -3,10 +3,6 @@
 
 import sys
 
-# def Award(chairs, n) :
-#     if n == 2 :
-
-
 N = int(sys.stdin.readline())
 chairs = []
 
