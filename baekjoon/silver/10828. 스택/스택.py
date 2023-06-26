@@ -1,12 +1,12 @@
-# 10828. ½ºÅÃ (½Ç¹ö 4)
-# ¾Ë°í¸®Áò ºĞ·ù : ÀÚ·á±¸Á¶, ½ºÅÃ
+# 10828. ìŠ¤íƒ (ì‹¤ë²„ 4)
+# ì•Œê³ ë¦¬ì¦˜ ë¶„ë¥˜ : ìë£Œêµ¬ì¡°, ìŠ¤íƒ
 
 import sys
 n = int(sys.stdin.readline())
-stack = [] # ½ºÅÃ ¿ªÇÒÀ» ÇÏ°Ô µÉ ¸®½ºÆ®
+stack = [] # ìŠ¤íƒ ì—­í• ì„ í•˜ê²Œ ë  ë¦¬ìŠ¤íŠ¸
 
 for _ in range(n) :
-    # ¹İº¹¹® ¾È¿¡¼­ ÀÔ·Â¹®À» ÀÛ¼ºÇÒ ¶© ¹İµå½Ã sys¸¦ »ç¿ëÇÒ °Í
+    # ë°˜ë³µë¬¸ ì•ˆì—ì„œ ì…ë ¥ë¬¸ì„ ì‘ì„±í•  ë• ë°˜ë“œì‹œ sysë¥¼ ì‚¬ìš©í•  ê²ƒ
     command = list(sys.stdin.readline().split())
 
     if command[0] == "push" :
@@ -17,5 +17,5 @@ for _ in range(n) :
         print(len(stack))
     elif command[0] == "empty" :
         print(0 if len(stack) >= 1 else 1)
-    else : # top ¸í·É¾îÀÎ °æ¿ì
+    else : # top ëª…ë ¹ì–´ì¸ ê²½ìš°
         print(stack[-1]) if len(stack) != 0 else print(-1)
