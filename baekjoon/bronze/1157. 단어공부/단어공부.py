@@ -1,25 +1,25 @@
-# 1157. ´Ü¾î°øºÎ (ºê·ÐÁî 1)
-# ¾Ë°í¸®Áò ºÐ·ù : ±¸Çö, ¹®ÀÚ¿­
+# 1157. ë‹¨ì–´ê³µë¶€ (ë¸Œë¡ ì¦ˆ 1)
+# ì•Œê³ ë¦¬ì¦˜ ë¶„ë¥˜ : êµ¬í˜„, ë¬¸ìžì—´
 
-word = input().upper()  # ÀÔ·Â¹ÞÀº ´Ü¾î¸¦ ´ë¹®ÀÚ·Î º¯È¯
-freq = {}  # µñ¼Å³Ê¸® ÀÚ·á±¸Á¶ »ý¼º
-max_count = 0  # °¡Àå ºóµµ¼ö°¡ ³ôÀº ¾ËÆÄºªÀÇ ºóµµ¼ö¸¦ ÀúÀåÇÒ º¯¼ö
+word = input().upper()  # ìž…ë ¥ë°›ì€ ë‹¨ì–´ë¥¼ ëŒ€ë¬¸ìžë¡œ ë³€í™˜
+freq = {}  # ë”•ì…”ë„ˆë¦¬ ìžë£Œêµ¬ì¡° ìƒì„±
+max_count = 0  # ê°€ìž¥ ë¹ˆë„ìˆ˜ê°€ ë†’ì€ ì•ŒíŒŒë²³ì˜ ë¹ˆë„ìˆ˜ë¥¼ ì €ìž¥í•  ë³€ìˆ˜
 
 for c in word:
-    if c.isalpha():  # ¾ËÆÄºªÀÎ °æ¿ì¿¡¸¸ ºóµµ¼ö °è»ê
+    if c.isalpha():  # ì•ŒíŒŒë²³ì¸ ê²½ìš°ì—ë§Œ ë¹ˆë„ìˆ˜ ê³„ì‚°
         if c in freq:
             freq[c] += 1
         else:
             freq[c] = 1
-        max_count = max(max_count, freq[c])  # °¡Àå ºóµµ¼ö°¡ ³ôÀº ¾ËÆÄºªÀÇ ºóµµ¼ö ¾÷µ¥ÀÌÆ®
+        max_count = max(max_count, freq[c])  # ê°€ìž¥ ë¹ˆë„ìˆ˜ê°€ ë†’ì€ ì•ŒíŒŒë²³ì˜ ë¹ˆë„ìˆ˜ ì—…ë°ì´íŠ¸
 
-# °¡Àå ºóµµ¼ö°¡ ³ôÀº ¾ËÆÄºªÀÌ ¿©·¯ °³ÀÎ °æ¿ì ? Ãâ·Â, ±×·¸Áö ¾ÊÀº °æ¿ì ÇØ´ç ¾ËÆÄºª Ãâ·Â
+# ê°€ìž¥ ë¹ˆë„ìˆ˜ê°€ ë†’ì€ ì•ŒíŒŒë²³ì´ ì—¬ëŸ¬ ê°œì¸ ê²½ìš° ? ì¶œë ¥, ê·¸ë ‡ì§€ ì•Šì€ ê²½ìš° í•´ë‹¹ ì•ŒíŒŒë²³ ì¶œë ¥
 result = []
 for k, v in freq.items():
     if v == max_count:
         result.append(k)
 
-# ¸®½ºÆ® ÄÄÇÁ¸®Çî¼ÇÀ» »ç¿ëÇÏ¿© result = [k for k, v in freq.items() if v == max_count] ·Î Ç®¾î¾µ ¼ö ÀÖÀ½
+# ë¦¬ìŠ¤íŠ¸ ì»´í”„ë¦¬í—¨ì…˜ì„ ì‚¬ìš©í•˜ì—¬ result = [k for k, v in freq.items() if v == max_count] ë¡œ í’€ì–´ì“¸ ìˆ˜ ìžˆìŒ
 
 if len(result) == 1:
     print(result[0].upper())
