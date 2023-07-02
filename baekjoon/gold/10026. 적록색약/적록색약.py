@@ -44,3 +44,8 @@ for i in N :
         if table1[i][j] == table1[i][j + 1] :
             graph1[i * width + j] = i * width + j + 1
             graph1[i * width + j + 1] = i * width + j
+
+        if table2[i][j] == table2[i][j + 1] :
+            graph2[i * width + j] = i * width + j + 1
+            graph2[i * width + j + 1] = i * width + j
+
