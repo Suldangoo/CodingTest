@@ -35,7 +35,12 @@ for _ in range(N) :
     table2.append(color)
 
 width = len(table1[0])
-graph1 = graph2 = [[] for _ in range(width * N + 1)] # 정점의 개수 + 1 만큼의 노드 생성
-visited1 = visited2 = [False] * (width * N + 1) # 방문 체크 리스트
+graph1 = graph2 = [[] for _ in range(width * N)] # 정점의 개수만큼의 노드 생성
+visited1 = visited2 = [False] * (width * N) # 방문 체크 리스트
 color1 = color2 = 0 # 연결 요소의 개수
 
+for i in N :
+    for j in range(width - 1) :
+        if table1[i][j] == table1[i][j + 1] :
+            graph1[i * width + j] = i * width + j + 1
+            graph1[i * width + j + 1] = i * width + j
