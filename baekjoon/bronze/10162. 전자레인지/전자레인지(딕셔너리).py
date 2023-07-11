@@ -1,13 +1,13 @@
-# 10162. ÀüÀÚ·¹ÀÎÁö (ºê·ÐÁî 3)
-# ¾Ë°í¸®Áò ºÐ·ù : ±×¸®µð, ±¸Çö, ¼öÇÐ
+# 10162. ì „ìžë ˆì¸ì§€ (ë¸Œë¡ ì¦ˆ 3)
+# ì•Œê³ ë¦¬ì¦˜ ë¶„ë¥˜ : ê·¸ë¦¬ë””, êµ¬í˜„, ìˆ˜í•™
 
-t = int(input()) # ÀüÀÚ·¹ÀÎÁö¿¡ µ¹¸± ½Ã°£À» ÃÊ´ÜÀ§·Î ÀÔ·Â¹ÞÀ½
-button_dict = {300 : 0, 60 : 0, 10 : 0} # 3°³ÀÇ ¹öÆ°°ú °¢°¢ ¸î ¹ø ´­·È´ÂÁö Ã¼Å©ÇÒ µñ¼Å³Ê¸® »ý¼º
+t = int(input()) # ì „ìžë ˆì¸ì§€ì— ëŒë¦´ ì‹œê°„ì„ ì´ˆë‹¨ìœ„ë¡œ ìž…ë ¥ë°›ìŒ
+button_dict = {300 : 0, 60 : 0, 10 : 0} # 3ê°œì˜ ë²„íŠ¼ê³¼ ê°ê° ëª‡ ë²ˆ ëˆŒë ¸ëŠ”ì§€ ì²´í¬í•  ë”•ì…”ë„ˆë¦¬ ìƒì„±
 
-if (t % 10 == 0) : # 10À¸·Î ³ª´©¾î ¶³¾îÁöÁö ¾ÊÀ» °æ¿ì -1 Ãâ·Â
-    for k, v in button_dict.items() : # µñ¼Å³Ê¸®ÀÇ items¸¦ k¿Í v¿¡ ³Ö¾î ¹Ýº¹¹® ½ÃÀÛ
-        button_dict[k] += t // k # µñ¼Å³Ê¸®ÀÇ °ª¿¡ ½Ã°£À» ¹öÆ°ÀÇ ´ÜÀ§·Î ³ª´« ¸òÀ» ´õÇÔ
-        t %= k # °è»ê ÈÄ ³²Àº ½Ã°£¿¡ ¹ÝÈ¯
-    print(button_dict[300], button_dict[60], button_dict[10]) # °á°ú Ãâ·Â, for¾È¿¡ ³ÖÁö ¾Ê¾Æ¼­ ½Ã°£À» ´ÜÃà
+if (t % 10 == 0) : # 10ìœ¼ë¡œ ë‚˜ëˆ„ì–´ ë–¨ì–´ì§€ì§€ ì•Šì„ ê²½ìš° -1 ì¶œë ¥
+    for k, v in button_dict.items() : # ë”•ì…”ë„ˆë¦¬ì˜ itemsë¥¼ kì™€ vì— ë„£ì–´ ë°˜ë³µë¬¸ ì‹œìž‘
+        button_dict[k] += t // k # ë”•ì…”ë„ˆë¦¬ì˜ ê°’ì— ì‹œê°„ì„ ë²„íŠ¼ì˜ ë‹¨ìœ„ë¡œ ë‚˜ëˆˆ ëª«ì„ ë”í•¨
+        t %= k # ê³„ì‚° í›„ ë‚¨ì€ ì‹œê°„ì— ë°˜í™˜
+    print(button_dict[300], button_dict[60], button_dict[10]) # ê²°ê³¼ ì¶œë ¥, forì•ˆì— ë„£ì§€ ì•Šì•„ì„œ ì‹œê°„ì„ ë‹¨ì¶•
 else :
     print(-1)
