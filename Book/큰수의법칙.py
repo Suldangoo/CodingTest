@@ -1,23 +1,23 @@
-# ±×¸®µð(Greedy, ¿å½ÉÀïÀÌ) ¾Ë°í¸®Áò ¹®Á¦ : Å« ¼öÀÇ ¹ýÄ¢
-# ºÒ±ÔÄ¢ÀûÀÎ Á¤¼öµéÀÇ ¹è¿­ÀÌ ÁÖ¾îÁ³À» ¶§, ÇØ´ç Á¤¼öµéÀ» »ç¿ëÇØ ´õÇÏ¿© °¡Àå Å« ¼ö¸¦ ¸¸µé¾î¶ó
-# Ã¹ ÁÙ¿¡ ¹è¿­ÀÇ ±æÀÌ / ¸î ¹ø ´õÇÒ ¼ö ÀÖ´ÂÁö / ÇÑ ¼ýÀÚ¸¦ ¿¬¼ÓÀ¸·Î »ç¿ëÇÒ ¼ö ÀÖ´Â È½¼ö Á¦ÇÑÀÌ ÁÖ¾îÁø´Ù
-# µÎ ¹øÂ° ÁÙ¿¡ ¹è¿­ÀÇ ³»¿ëÀÌ ÁÖ¾îÁø´Ù
+# ê·¸ë¦¬ë””(Greedy, ìš•ì‹¬ìŸì´) ì•Œê³ ë¦¬ì¦˜ ë¬¸ì œ : í° ìˆ˜ì˜ ë²•ì¹™
+# ë¶ˆê·œì¹™ì ì¸ ì •ìˆ˜ë“¤ì˜ ë°°ì—´ì´ ì£¼ì–´ì¡Œì„ ë•Œ, í•´ë‹¹ ì •ìˆ˜ë“¤ì„ ì‚¬ìš©í•´ ë”í•˜ì—¬ ê°€ìž¥ í° ìˆ˜ë¥¼ ë§Œë“¤ì–´ë¼
+# ì²« ì¤„ì— ë°°ì—´ì˜ ê¸¸ì´ / ëª‡ ë²ˆ ë”í•  ìˆ˜ ìžˆëŠ”ì§€ / í•œ ìˆ«ìžë¥¼ ì—°ì†ìœ¼ë¡œ ì‚¬ìš©í•  ìˆ˜ ìžˆëŠ” íšŸìˆ˜ ì œí•œì´ ì£¼ì–´ì§„ë‹¤
+# ë‘ ë²ˆì§¸ ì¤„ì— ë°°ì—´ì˜ ë‚´ìš©ì´ ì£¼ì–´ì§„ë‹¤
 
-n, m, k = map(int, input().split()) # n, m, k¸¦ ÀÔ·Â¹ÞÀ½
-data = list(map(int, input().split())) # n°³¸¸Å­ ÀÔ·ÂÀ» ¹ÞÀº ÈÄ ¸®½ºÆ®·Î º¯°æ
-data = sorted(data) # Á¤·Ä, ¿À¸§Â÷¼øÀÌ¹Ç·Î °¡Àå µÚ¿¡¿Í °Å±â¼­ ¾Õ ¼ýÀÚ°¡ °¡Àå Å« µÎ ¼ýÀÚ
+n, m, k = map(int, input().split()) # n, m, kë¥¼ ìž…ë ¥ë°›ìŒ
+data = list(map(int, input().split())) # nê°œë§Œí¼ ìž…ë ¥ì„ ë°›ì€ í›„ ë¦¬ìŠ¤íŠ¸ë¡œ ë³€ê²½
+data = sorted(data) # ì •ë ¬, ì˜¤ë¦„ì°¨ìˆœì´ë¯€ë¡œ ê°€ìž¥ ë’¤ì—ì™€ ê±°ê¸°ì„œ ì•ž ìˆ«ìžê°€ ê°€ìž¥ í° ë‘ ìˆ«ìž
 
-one = data[-1] # °¡Àå Å« ¼ýÀÚ ÀÎµ¦½Ì
-two = data[-2] # µÎ ¹øÂ°·Î Å« ¼ýÀÚ ÀÎµ¦½Ì
-total = 0 # ÇÕ°è
-flag = 0 # ¿¬¼Ó k¹øÀ» °¨ÁöÇÏ±â À§ÇÑ ÇÃ·¡±× º¯¼ö
+one = data[-1] # ê°€ìž¥ í° ìˆ«ìž ì¸ë±ì‹±
+two = data[-2] # ë‘ ë²ˆì§¸ë¡œ í° ìˆ«ìž ì¸ë±ì‹±
+total = 0 # í•©ê³„
+flag = 0 # ì—°ì† kë²ˆì„ ê°ì§€í•˜ê¸° ìœ„í•œ í”Œëž˜ê·¸ ë³€ìˆ˜
 
-for _ in range(m) : # m¹ø¸¸Å­ ¹Ýº¹
-    if flag >= k : # ÇÃ·¡±×°¡ k¿Í °°´Ù¸é
-        total += two # 2¹øÂ°·Î Å« ¼ö¸¦ ´õÇÔ
-        flag = 0 # ÇÃ·¡±× Á¤»óÈ­
+for _ in range(m) : # më²ˆë§Œí¼ ë°˜ë³µ
+    if flag >= k : # í”Œëž˜ê·¸ê°€ kì™€ ê°™ë‹¤ë©´
+        total += two # 2ë²ˆì§¸ë¡œ í° ìˆ˜ë¥¼ ë”í•¨
+        flag = 0 # í”Œëž˜ê·¸ ì •ìƒí™”
     else :
         total += one
-        flag += 1 # ÇÃ·¡±×¸¦ 1¾¿ ¿Ã¸²
+        flag += 1 # í”Œëž˜ê·¸ë¥¼ 1ì”© ì˜¬ë¦¼
 
 print(total)
