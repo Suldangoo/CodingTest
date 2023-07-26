@@ -1,7 +1,7 @@
-# ÇÁ·Î±×·¡¸Ó½º Lv.0 Á¾ÀÌ ÀÚ¸£±â
+# í”„ë¡œê·¸ëž˜ë¨¸ìŠ¤ Lv.0 ì¢…ì´ ìžë¥´ê¸°
 
-# ÇÑ º¯¿¡ ³ª´²Áú Á¾ÀÌ M x N ÀÌ ÁÖ¾îÁ³À» ¶§, ÃÖ¼Ò °¡À§Áú ¼ö´Â
-# M °ú NÀ» °öÇÑ °á°ú¿¡¼­ -1ÀÌ´Ù.
+# í•œ ë³€ì— ë‚˜ëˆ ì§ˆ ì¢…ì´ M x N ì´ ì£¼ì–´ì¡Œì„ ë•Œ, ìµœì†Œ ê°€ìœ„ì§ˆ ìˆ˜ëŠ”
+# M ê³¼ Nì„ ê³±í•œ ê²°ê³¼ì—ì„œ -1ì´ë‹¤.
 def solution(M, N):
     answer = (M * N) - 1
     return answer
