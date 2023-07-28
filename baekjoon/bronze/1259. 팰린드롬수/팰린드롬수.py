@@ -7,7 +7,9 @@ def is_palindrome(n):
 
 while True:
     n = int(input())
-    if n == 0:
+
+    # 0이라면 종료하고, 팰린드롬 수라면 yes를 출력한다.
+    if n == 0 :
         break
     if is_palindrome(n):
         print('yes')
