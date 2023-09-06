@@ -9,7 +9,7 @@ data = sorted(data) # 정렬, 오름차순이므로 가장 뒤에와 거기서 �
 
 one = data[-1] # 가장 큰 숫자 인덱싱
 two = data[-2] # 두 번째로 큰 숫자 인덱싱
-total = 0 # 합
+total = 0 # 합계
 flag = 0 # 연속 k번을 감지하기 위한 플래그 변수
 
 for _ in range(m) : # m번만큼 반복
