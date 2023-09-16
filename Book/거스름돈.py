@@ -7,7 +7,7 @@ count = 0 # 거슬러 줄 동전의 개수
 coin_types = [500, 100, 50, 10] # 동전의 단위 리스트
 
 for i in coin_types :
-    count += n // i # 금색을 동전 단위만큼 나눈 후 몫을 반환(//)하여 count에 그 숫자만큼 증가
+    count += n // i # 금색을 동전 단위만큼 나눈 후 몫을 반환하여 count에 그 숫자만큼 증가
     n %= i # 남은 돈은 동전 단위만큼 나눈 나머지로 저장
 
 print(count)
