@@ -1,11 +1,13 @@
 # 1874. 스택 수열 (실버 2)
 # 알고리즘 분류 : 자료 구조, 스택
 
-n = int(input())
+import sys
+
+n = int(sys.stdin.readline())
 nums = []
 
 for _ in range(n) :
-    nums.append(int(input())) # 사용자로부터 수열을 입력받아 nums에 추가
+    nums.append(int(sys.stdin.readline())) # 사용자로부터 수열을 입력받아 nums에 추가
 
 answer = [] # +와 -가 담길 최종 답 리스트
 stack = [] # 풀이에 쓰일 스택 리스트
