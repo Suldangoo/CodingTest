@@ -1,7 +1,8 @@
 # 9461. 파도반 수열 (실버 3)
 # 알고리즘 분류 : 수학, 다이나믹 프로그래밍
 
-T = int(input())
+import sys
+input = sys.stdin.readline
 
 # 두 삼각형의 빗변에 해당하지 않는 삼각형들
 padovan = [1, 1, 1, 2, 2]
@@ -13,6 +14,6 @@ padovan = [1, 1, 1, 2, 2]
 for _ in range(95) :
     padovan.append(padovan[-1] + padovan[-5])
 
-for _ in range(T) :
+for _ in range(int(input())) :
     # 입력한 숫자 -1번 번지의 리스트 출력
     print(padovan[int(input()) - 1])
