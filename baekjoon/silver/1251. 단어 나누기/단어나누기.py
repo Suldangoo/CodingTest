@@ -4,23 +4,15 @@
 import sys
 input = sys.stdin.readline
 
-ward = input() # 단어를 입력받음
+ward = input().strip() # 단어를 입력받음
 
-point1 = 0 # 첫 번째로 슬라이싱할 문자의 번지수
+wards = [] # 모든 거꾸로된 경우의 단어들을 저장할 리스트
 
-for i in range(len(ward) - 2) :
-    if ward[point1] > ward[i] : # 만약 현재 번지수의 문자가 저장해뒀던 문자보다 작다면
-        point1 = i
-
-point2 = point1 + 1 # 두 번째로 슬라이싱할 문자의 번지수
-
-for i in range(point1 + 1, len(ward) - 1) :
-    if ward[point2] > ward[i] : # 만약 현재 번지수의 문자가 저장해뒀던 문자보다 작다면
-        point2 = i
-
-print(''.join(
-    list(reversed(ward[:point1 + 1])) + 
-    list(reversed(ward[point1 + 1:point2 + 1])) + 
-    list(reversed(ward[point2 + 1:-1]))))
-
-# aaaab같은 문자열을 뒤집었을 때 답이 aaaab가 나와야 하나, aabaa가 나오는 반례가 존재
+# 슬라이싱할 리스트의 끝번호를 기준으로 변수를 두 개 설정
+for i in range(1, len(ward) - 1) : # 1 ~ 길이 - 2까지
+    for j in range(i + 1, len(ward)) : # i + 1 ~ 길이 - 1까지
+        wards.append(''.join(list(reversed(ward[:i])) +
+                     list(reversed(ward[i:j])) +
+                     list(reversed(ward[j:]))))
+        
+print(sorted(wards)[0])
