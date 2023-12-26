@@ -14,7 +14,11 @@ while len(nums) > 0 : # nums 문자열이 모두 소모될 때까지 반복
 
     # num 문자열이 존재하며, nums 문자열이 존재하다면 반복
     while len(num) > 0 and len(nums) > 0 :
-        if nums[0] == num[0] : # nums의 맨 앞에 원하는 수가 있다면
+
+        # 현재 i의 숫자 중 하나라도 nums의 맨 앞에 존재한다면,
+        # 해당 수를 찾은 것이므로 다음 수로 넘어감
+
+        if nums[0] == num[0] :
             nums = nums[1:] # nums 앞 숫자를 제거
         num = num[1:] # 없다면 num 앞 숫자를 제거
 
