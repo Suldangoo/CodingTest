@@ -24,7 +24,7 @@ while(True) :
 
     
     for i in text :
-        answer[point] = i
+        answer[point] = i # 리스트에 문자열 삽입
 
         point += N # N만큼 번지수를 점프
 
