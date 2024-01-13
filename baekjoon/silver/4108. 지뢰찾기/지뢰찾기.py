@@ -24,7 +24,7 @@ while(True) :
             if table[x][y] == '.' : # 탐색하는 좌표값이 '.'이라면
                 table[x][y] = 0 # 해당 좌표값을 int형의 0으로 교체
                 for i in range(8) : # 인접한 8칸을 모두 탐색
-                    a = x + dx[i]
+                    a = x + dx[i] # 현재 기준좌표에서 미리 설정해둔 좌표차이 값을 더해 인접 테이블 탐색
                     b = y + dy[i]
                     if a >= 0 and a < r and b >= 0 and b < c : # 설정한 좌표값이 테이블 영역 바깥이 아니라면
                         if table[a][b] == '*' : # 탐색하는 좌표에 있는 것이 지뢰라면
