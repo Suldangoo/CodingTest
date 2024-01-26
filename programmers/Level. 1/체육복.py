@@ -1,3 +1,5 @@
+# 프로그래머스 Lv.1 체육복
+
 def solution(n, lost, reserve):
     
     team = {}
