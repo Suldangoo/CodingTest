@@ -2,9 +2,10 @@
 
 def solution(n, lost, reserve):
     
-    team = {}
-    count = 0
+    team = {} # 팀 딕셔너리
+    count = 0 # 최종 진출 가능 팀
     
+    # 팀에 체육복 배분
     for i in range(n) :
         team[i] = 1
         if i + 1 in lost :
