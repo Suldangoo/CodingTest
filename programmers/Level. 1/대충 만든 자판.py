@@ -1,3 +1,5 @@
+# 프로그래머스 Lv.1 대충 만든 자판
+
 def solution(keymap, targets):
     answer = [] # 정답 리스트
     
