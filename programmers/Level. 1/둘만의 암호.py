@@ -1,3 +1,5 @@
+# 프로그래머스 Lv.1 둘만의 암호
+
 def solution(s, skip, index):
     answer = ''
     
