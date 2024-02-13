@@ -1,3 +1,6 @@
+# 프로그래머스 Lv.1 성격 유형 검사하기
+# 2022 KAKAO TECH INTERNSHIP
+
 def solution(survey, choices):    
     answer = ''
     
