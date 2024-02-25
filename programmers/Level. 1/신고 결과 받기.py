@@ -1,3 +1,6 @@
+# 프로그래머스 Lv.1 신고 결과 받기
+# 2022 KAKAO BLIND RECRUITMENT
+
 def solution(id_list, report, k):
     data = dict() # 키가 유저 ID고, 값이 유저가 신고한 ID들로 이루어진 리스트인 딕셔너리
     report_data = dict() # 키가 유저 ID고, 값이 해당 유저가 신고당한 수인 딕셔너리
