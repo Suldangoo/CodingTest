@@ -1,3 +1,6 @@
+# 프로그래머스 Lv.1 붕대 감기
+# PCCP 기출문제
+
 def solution(bandage, health, attacks):
     hp = health # health는 최대 체력으로 두고, 현재 hp를 의미하는 변수 생성
     time = 0 # 연속으로 성공하는 시간
