@@ -30,7 +30,7 @@ def dfs(x, y, graph, count, apple) :
         if graph[ddx][ddy] == -1 :
             continue
 
-        # 이동한 곳이 벽이라면 (-1) 패스
+        # 이동한 곳이 사과라면 (1) 획득 후 획득 체크
         if graph[ddx][ddy] == 1 :
             apple += 1
             isFind = True
