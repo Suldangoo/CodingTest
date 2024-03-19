@@ -7,6 +7,6 @@ N = int(input())
 for i in range(1, 10000000) :
     N -= i
     # 1부터 순차적으로 빼다가, 더 이상 뺄 수 없게 되면 출력
-    if N < 0 :
-        print(i - 1)
+    if N <= i :
+        print(i)
         break
