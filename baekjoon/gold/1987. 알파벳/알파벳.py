@@ -5,47 +5,46 @@ import sys
 input = sys.stdin.readline
 
 # dfs 재귀 함수 (x축, y축 위치정보, 그래프, 이동 횟수, 보유 사과)
-def dfs(x, y, graph, alpha) :
+def dfs(x, y, graph, alpha, count) :
+    global answer  # 전역 변수로 설정
+
+    # 현재 위치의 알파벳을 방문했다고 표시
+    alpha[ord(graph[x][y]) - ord('A')] = True
+
     # 4방향으로 이동하며 재귀
     for i in range(4) :
         ddx = x + dx[i]
         ddy = y + dy[i]
 
         # 이동 후 범위를 벗어났다면 패스
-        if ddx < 0 or ddx > r or ddy < 0 or ddy > c :
+        if ddx < 0 or ddx >= r or ddy < 0 or ddy >= c :
             continue
 
         # 이동한 장소의 알파벳이 이미 보유중이라면 패스
-        if graph[ddx][ddy] in alpha :
+        if alpha[ord(graph[ddx][ddy]) - ord('A')] :
             continue
 
-        # 이동한 곳이 벽이라면 (-1) 패스
-        if graph[ddx][ddy] == 1 :
-            apple += 1
-            isFind = True
-        else :
-            isFind = False
+        dfs(ddx, ddy, graph, alpha, count + 1) # 다음 dfs 시작
+    
+    # 현재 위치에서의 탐색이 종료되면, 최대 길이를 갱신
+    answer = max(answer, count)
 
-        tmp = graph[x][y] # 기존 값 저장
-        graph[x][y] = -1 # 지나간 길은 벽인 -1로 채우기
-        dfs(ddx, ddy, graph, count + 1, apple)
-        graph[x][y] = tmp # 재귀했다면 기존 값 복원
-        if isFind : # 얻은 사과가 있다면 반납
-            apple -= 1
-    return
+    # 현재 위치의 알파벳을 다시 방문하지 않은 것으로 표시
+    alpha[ord(graph[x][y]) - ord('A')] = False
 
+answer = 0 # 최대 길이
 graph = [] # 그래프
 r, c = map(int, input().split())
 for i in range(r) :
-    graph.append(input())
+    graph.append(input().rstrip())
 
-answer = 0 # 정답
-alpha = [] # 보유한 알파벳 리스트
+# 알파벳 방문 여부를 체크하기 위한 리스트
+alpha = [False] * 26
 
 # 위치 정보 변수
 dx = [0, -1, 0, 1]
 dy = [-1, 0, 1, 0]
 
-dfs(r, c, graph, alpha) # 탐색
+dfs(0, 0, graph, alpha, 1) # 탐색
 
-print(alpha)
+print(answer)
