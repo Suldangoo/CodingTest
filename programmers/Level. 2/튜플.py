@@ -10,15 +10,13 @@ def solution(s):
     for i in s :
         if i == '{' : # 여는 괄호라면 새로운 리스트 생성
             tuples.append([])
-        elif i == '}' : # 닫는 괄호라면 현재까지 모은 문자열을 숫자로 변환 후 다음 쉼표를 제거
-            s = s[1:]
-        elif i == ',' : # 쉼표라면 현재까지 모은 숫자 문자열을 숫자로 변환
-            tuples[-1].append(int(num))
-            num = ''
+        elif i == '}' or i == ',' : # 닫는 괄호이거나 콤마라면 현재까지 모은 문자열을 숫자로 변환 후 다음 쉼표를 제거
+            if num :
+                tuples[-1].append(int(num))
+                num = ''
         else : # 남은 경우는 모두 숫자의 경우
             num += i
-    tuples[-1].append(int(num)) # 반복이 끝났다면
-    
+            
     tuples.sort(key=len) # 리스트의 길이 순으로 정렬
 
     backupSet = set() # 이전 리스트들의 요소를 저장할 셋
