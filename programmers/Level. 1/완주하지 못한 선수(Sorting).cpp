@@ -1,3 +1,4 @@
+// 프로그래머스 Lv.1 완주하지 못한 선수
 // Sorting / Loop를 활용
 
 #include <string>
