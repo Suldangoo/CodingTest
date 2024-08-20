@@ -7,20 +7,25 @@
 using namespace std;
 
 string solution(string X, string Y) {
-    vector<char> Xvec(X.begin(), X.end());
-    vector<char> Yvec(Y.begin(), Y.end());
+    vector<int> X_count(10, 0);
+    vector<int> Y_count(10, 0);
+    
+    for (char c : X) X_count[c - '0']++; // X의 숫자들 빈도 측정
+    for (char c : Y) Y_count[c - '0']++; // Y의 숫자들 빈도 측정
+    
     vector<char> nums;
+    for (int i = 9; i >= 0; --i) {
+        int common_count = min(X_count[i], Y_count[i]);
+        for (int j = 0; j < common_count; ++j) {
+            nums.push_back(i + '0');
+        }
+    }
+
+    if (nums.empty()) return "-1";
     
-    for(int i = 0; i < Xvec.size(); i++)
-        for(int j = 0; j < Yvec.size(); j++)
-            if(Xvec[i] == Yvec[j]) {
-                nums.push_back(Xvec[i]);
-                Yvec.erase(Yvec.begin() + j);
-                break;
-            }
+    string answer(nums.begin(), nums.end());
     
-    sort(nums.rbegin(), nums.rend()); // 내림차순으로 정렬
-    string answer(nums.begin(), nums.end()); // string으로 합치기
+    if (answer[0] == '0') return "0";
     
     return answer;
 }
