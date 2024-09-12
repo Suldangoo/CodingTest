@@ -5,7 +5,7 @@ def solution(wallet, bill):
     answer = 0
     
     while max(bill) > max(wallet) or min(bill) > min(wallet) :
-        bill.sort();
+        bill.sort()
         bill[1] //= 2
         answer += 1
     
