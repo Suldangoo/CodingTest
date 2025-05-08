@@ -1,8 +1,9 @@
 // 프로그래머스 Lv.0 각도기
 
-#include <stdio.h>
-#include <stdbool.h>
-#include <stdlib.h>
+#include <string>
+#include <vector>
+
+using namespace std;
 
 int solution(int angle) {
     if (angle < 90)
